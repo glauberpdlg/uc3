@@ -1,6 +1,7 @@
+
 import random
 
-lista_de_pratos = ["Lasanha", "Feijoada", "Strogonoff", "Pizza", "Hambúrguer", "Sushi", "Tacos", "Risoto", "Coxinha", "Churrasco" , "Churrasco" , "Podrão" , "Rabada"]
+lista_de_pratos = ["lasanha", "feijoada", "strogonoff", "pizza", "hambúrguer", "sushi", "tacos", "risoto", "coxinha", "churrasco" , "podrão" , "rabada"]
 
 prato_secreto = random.choice(lista_de_pratos)
 print(prato_secreto)    
@@ -23,19 +24,15 @@ print("-"*200)
 print("Jogo de Adivinhação: Descubra o prato secreto!")
 print(", ".join(lista_de_pratos))
 
-jogada=1
-for jogada in range(1, tentativa + 1):
-    palpite = input(f"Tentativa {tentativa}: Digite o nome do prato: ")
-
+for jogada in range(1, tentativa+1):
+    palpite = str(input("Qual o prato delicioso secreto ? ").lower())
     if palpite == prato_secreto:
-        print(f"Parabéns! Você acertou o prato secreto: {prato_secreto}!")
+        print("Parabéns você acertou o prato secreto! {} é meu favorito também!".format(palpite))
         break
     else:
-        restantes = tentativa - palpite
-        if restantes > 0:
-            print(f"Errado! Você ainda tem {restantes} tentativa(s).")
-        else:
-            print(f"Suas tentativas acabaram! O prato secreto era: {prato_secreto}.")
+        restam = (tentativa) - jogada
+        print("Você errou! Restam {} tentativas".format(restam))
+
 
 
 
